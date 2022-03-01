@@ -179,7 +179,12 @@ pub fn to_elm(pos: Vec<Po>) {
                         if i == len - 1 {
                             "else".to_string()
                         } else {
-                            format!("{}if n == {} then", if i == 0 { "" } else { "el" }, i + 1)
+                            format!(
+                                "{}if n {} {} then",
+                                if i == 0 { "" } else { "el" },
+                                if i == 0 { "<=" } else { "==" },
+                                i + 1
+                            )
                         },
                     );
                     println!("                \"{}\"\n", msgstr);
