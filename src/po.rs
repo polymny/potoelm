@@ -72,6 +72,9 @@ impl Po {
             line.pop();
 
             if len == 0 {
+                if msg.msgid != "" {
+                    po.msgs.push(msg);
+                }
                 break;
             }
 
