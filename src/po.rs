@@ -73,6 +73,9 @@ impl Po {
 
             if len == 0 {
                 if msg.msgid != "" {
+                    if msgstr != "" {
+                        msg.msgstr.push(msgstr);
+                    }
                     po.msgs.push(msg);
                 }
                 break;
